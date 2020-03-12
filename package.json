@@ -1,0 +1,21 @@
+{
+  "name": "liri",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "inquire": "^0.4.8",
+    "inquirer": "^7.1.0",
+    "moment": "^2.24.0",
+    "spotify": "^0.3.0"
+  }
+}
