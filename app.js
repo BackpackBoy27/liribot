@@ -2,9 +2,7 @@ require("dotenv").config();
 var chalk = require("chalk");
 var axios = require("axios");
 var Spotify = require("node-spotify-api");
-// var moment = require("moment");
-// var dotenv = require("dotenv");
-
+var omdb = require("omdb-client")
 var action = process.argv[2];
 // var command = process.argv[3];
 
@@ -48,13 +46,22 @@ var data = {
 console.log("spotify search - ", data)
 })
 
-} else if (action === "music"){
-    console.log("music")
-    console.log("\n", command)
-
-} else if (action === "tidal") {
-    console.log("tidal")
-    console.log(action, "\n", command)
-    
+// } else if (action === "concert"){
+//     console.log("concert")
+//     axios.get(`https://rest.bandsintown.com/artists/${command}/events?app_id=codingbootcamp`)
+//     .then(result => {
+//         console.log(result)
+//     }).catch(error => {
+//         console.log(error)
+//     })
+} else if (action === "omdb") {
+    console.log("omdb")
+    omdb.get({
+        apiKey:process.env.OMDB_KEY,
+        title:command,
+        plot:"short",
+    },(error, data) => {
+        console.log(data)
+    })
 }
 
