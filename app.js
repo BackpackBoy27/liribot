@@ -1,11 +1,15 @@
 var chalk = require("chalk");
-var axios = require("axios");
+// var axios = require("axios");
 // var spotify = require("node-spotify-api");
-var moment = require("moment");
-var dotenv = require("dotenv");
+// var moment = require("moment");
+// var dotenv = require("dotenv");
 
 var action = process.argv[2];
-var command = process.argv[3];
+// var command = process.argv[3];
+
+var command = process.argv.splice(3).join(" ")
+
+
 // console.log(action);
 // console.log(command);
 
@@ -18,3 +22,4 @@ var command = process.argv[3];
         console.log(chalk.red(command));
     };
 // };
+
