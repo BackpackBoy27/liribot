@@ -61,7 +61,17 @@ console.log("spotify search - ", data)
         title:command,
         plot:"short",
     },(error, data) => {
-        console.log(data)
+        // console.log(data)
+        var data = {
+            title:data.Title,
+            year:data.Year,
+            rating:data.imdbRating,
+            location:data.Country,
+            languages:data.Language,
+            plot:data.Plot,
+            actors:data.Actors
+        }
+        console.log("omdb search - ", data)
     })
 }
 
