@@ -1,4 +1,4 @@
 # liribot
 ## down below is the video to my liribot
-https://drive.google.com/file/d/1rx_4KO07U7CJyujNM_QfQPMOxcYbGDbt/view?usp=sharing
+https://drive.google.com/open?id=1cBuoNxtNjpToXCRxm7UJVS6CG5ytX4q8
 
