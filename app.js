@@ -1,5 +1,4 @@
 require("dotenv").config();
-console.log(process.env.OMDB_KEY)
 var chalk = require("chalk");
 var axios = require("axios");
 var Spotify = require("node-spotify-api");
@@ -36,10 +35,17 @@ if (action === "spotify"){
 
 spotify.search({
     type:"track",
-    query:action,
+    query:command,
     limit: 1
 },(error, data) => {
 console.log(data.tracks)
+var data = {
+    artist:data.tracks.items[0].artists[0].name,
+    song:data.tracks.items[0].name,
+    album:data.tracks.items[0].album.name,
+    url:data.tracks.items[0].external_urls.spotify
+}
+console.log("spotify search - ", data)
 })
 
 } else if (action === "music"){
