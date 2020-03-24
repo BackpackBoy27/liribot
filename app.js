@@ -4,13 +4,22 @@ var axios = require("axios");
 var Spotify = require("node-spotify-api");
 var omdb = require("omdb-client")
 var action = process.argv[2];
+// var is a variable talking to action which is a object. And process is used to talk to the argv which is the console which is tlaking to a array.
+// targets variable in terminal using process.argv[] assigned to action 
+
+
 // var command = process.argv[3];
 
 var command = process.argv.splice(3).join(" ")
+// targets variable in terminal, and applies splice and join method
+// splice removes objects from the array and join combines the user input with a space in between.
+// the splice method targets the 3rd index object in the array.
+// join inserts empty space in between the object inside the console log.
+
 // spotify this song Bruno Mars
 
-// console.log(action);
-// console.log(command);
+console.log(action);
+console.log(command);
 
 
 // function dogtowel(action, command){
@@ -36,7 +45,13 @@ spotify.search({
     query:command,
     limit: 1
 },(error, data) => {
-console.log(data.tracks)
+    if(error) {
+        return error
+    }
+// this function uses spotify as a search command in the console log, using and error first callback.
+// error first callback allows the user to see if the error lives in thie codeblock. instead of .catch
+
+// console.log(data.tracks)
 var data = {
     artist:data.tracks.items[0].artists[0].name,
     song:data.tracks.items[0].name,
@@ -54,6 +69,7 @@ console.log("spotify search - ", data)
 //     }).catch(error => {
 //         console.log(error)
 //     })
+
 } else if (action === "omdb") {
     console.log("omdb")
     omdb.get({
